@@ -1,0 +1,168 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+}
+
+body{
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.5;
+    color: var(--color-white);
+    background: var(--color-bg3);
+}
+
+/* ---------------------- CONTACT ----------------------- */
+.contact_container{
+    background: var(--color-bg2);
+    padding: 4rem;
+    display: grid;
+    grid-template-columns: 40% 60%;                /* display the columns in a row in 40:60 ratio */
+    gap: 4rem;
+    height: 30rem;
+    margin: 2.5rem auto;
+}
+
+/* ---------------------- ASIDE ----------------------- */
+.contact_aside{
+    background: rgb(124, 26, 222);
+    padding: 2rem;
+    border-radius: 2rem;
+    position: relative;
+}
+
+.aside_image{
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.contact_aside h2{
+    text-align: center;
+    margin-bottom: 1.2rem;
+}
+
+.contact_aside p{
+    font-size: 1rem;
+    margin-bottom: 2rem;
+}
+
+.contact_details li{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: 0.3rem;
+    font-size: 1rem;
+}
+
+.contact_socials{
+    display: flex;
+    gap: 0.8rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.contact_socials li{
+    display: flex;
+}
+
+.contact_socials a{
+    background: var(--color-bg2);
+    padding: 0.5rem;
+    border-radius: 50%;
+    font-size: 1rem;
+    transition: all 500ms ease;
+}
+
+.contact_socials a:hover{
+    background: transparent;
+    border: 1px solid var(--color-primary);
+}
+
+/* ---------------------- FORM ----------------------- */
+.contact_form{
+    display: flex;                          /* full sized blocks */
+    flex-direction: column;                 /* display the blocks column wise */
+    gap: 1.1rem;                            /* gap in between the blocks */
+    margin-right: 4rem;
+}
+
+.form_name{
+    display: flex;
+    gap: 1.2rem;                         
+}
+
+.contact_form input[type="text"]{
+    width: 50%;                            /* increase the name width */
+}
+
+#phone{
+    width: 95%;
+}
+
+input, textarea{
+    width: 95%;
+    padding: 1rem;
+    background: var(--color-bg3);
+    color: var(--color-white);
+}
+
+input::placeholder{
+    color: rgb(170, 168, 164);
+}
+
+.contact_form .btn{
+    width: max-content;                      /* decrease the button size */
+    margin-top: 1rem;
+    cursor: pointer;
+    background: yellow;
+    color: var(--color-black);
+}
+
+/* ---------------------- Media Queries (Tablets) ----------------------- */
+@media screen and (max-width: 1024px) {
+    /* for any screen below 1024px */
+    .contact{
+        padding-bottom: 0;
+    }
+
+    .contact_container{
+        gap: 1.5rem;
+        margin-top: 3rem;
+        height: fit-content;                 /* fit everything inside */
+        padding: 1.5rem;
+    }
+
+    /* ---------------------- ASIDE ----------------------- */
+    .contact_aside{
+        padding: 2rem;
+        border-radius: 1rem;
+    }
+
+    /* ---------------------- FORM ----------------------- */
+    .contact_form{
+        align-self: center;
+        margin-right: 1.7rem;
+    }   
+}
+
+/* ---------------------- Media Queries (Mobiles) ----------------------- */
+@media screen and (max-width: 600px) {
+    /* for any screen below 600px */
+    .contact_container{
+        grid-template-columns: 1fr;                  /* display everything in a single row each */
+        gap: 3rem;
+        margin: 0;
+    }
+
+    .contact_form{
+        margin: 0 1.5rem 3rem;
+    }
+
+    .form_name{
+        flex-direction: column;                      /* display all names in a single row each */
+    }
+
+    .form_name input[type="text"]{
+        width: 95%;
+    }
+}

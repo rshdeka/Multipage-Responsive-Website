@@ -1,0 +1,34 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+}
+
+body{
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.5;
+    color: var(--color-white);
+    background: var(--color-bg);
+}
+
+/* ---------------------- COURSES ----------------------- */
+.courses{
+    margin-top: -5rem;
+    height: fit-content;             /* fit columns inside the container */
+}
+
+.courses_container{
+    grid-template-columns: 1fr 1fr 1fr;  /* 3 columns in a row with equal space */
+}
+
+.course{
+    background: var(--color-bg2);
+    border: 0 solid transparent;
+}
+
+.btn-primary{
+    background: yellow;
+    color: var(--color-black);
+    margin-bottom: 1.2rem;
+}

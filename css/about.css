@@ -1,0 +1,196 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+}
+
+body{
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.5;
+    color: var(--color-white);
+    background: var(--color-bg);
+}
+
+/* ---------------------- ACHIEVEMENTS ----------------------- */
+.about_achievements{
+    margin-top: 5rem;
+}
+
+.achievements_container{
+    display: grid;
+    grid-template-columns: 60% 40%;
+    gap: 5rem;
+    margin-top: 3rem;
+}
+
+.achievements-left > p{
+    margin: 2.5rem 0 2rem;
+}
+
+.achievements_cards{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);        /* display all 3 columns in a row */
+    gap: 1.2rem;
+}
+
+.achievement_card{
+    background: var(--color-primary);           /* give background color to the cards */
+    color: var(--color-white);
+    padding: 1.7rem;
+    border-radius: 1.1rem;
+    text-align: center;
+    transition: all 500ms ease;                 /* smoothly move from one card to the other */
+}
+
+.achievement_card:hover{
+    background: var(--color-bg1);
+}
+
+.achievement_icon{
+    background: var(--color-warning);
+    padding: 0.5rem;
+    border-radius: 0.8rem;
+    display: inline-block;
+    margin-bottom: 1.6rem;
+    font-size: 1.7rem;                          /* size of icons */
+}
+
+/* different color for each icon */
+.achievement_card:nth-child(2) .achievement_icon{       /* second icon */
+    background-color: var(--color-bg);
+}
+
+.achievement_card:nth-child(3) .achievement_icon{       /* third icon */
+    background-color: var(--color-success);
+}
+
+.achievement_card p{
+    margin-top: 0.8rem;
+}
+
+/* ---------------------- TEAM ----------------------- */
+.team{
+    background: var(--color-bg3);
+}
+
+.team_container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);            /* 3 columns in a row with equal space each */
+    gap: 3rem;
+}
+
+.team_member{
+    background: var(--color-bg1);
+    padding: 2rem;
+    border: 1px solid transparent;
+    transition: all 500ms ease;  
+    position: relative;   
+}
+
+.team_member:hover{
+    background: transparent;
+    border-color: var(--color-primary);
+}
+
+.team_member-image{
+    height: 35vh;
+}
+
+.team_member-info{
+    text-align: center;              /* align name and info in center */
+    margin-top: 1.2rem;
+}
+
+.team_member-info > p{
+    margin-top: 0.7rem;
+}
+
+.team_member-socials{
+    display: flex;
+    background: var(--color-success);
+    border-radius: 1rem;
+    margin-top: 1.5rem;
+}
+
+.team_member-socials a{
+    padding: 1rem;
+}
+
+/* ---------------------- Media Queries (Tablets) ----------------------- */
+@media screen and (max-width: 1024px) {
+    /* for any screen below 1024px */
+    body{
+        background: var(--color-success);
+    }
+    
+    /* ---------------------- ACHIEVEMENTS ----------------------- */
+    .about_achievements{
+        margin-top: 3rem;
+    }
+
+    .achievements_container{
+        display: grid;
+        grid-template-columns: 1fr;            /* display the 2 items in a column each */
+        gap: 5rem;
+        margin-top: 3rem;
+    }
+
+    .achievements-right{
+        width: 80%;
+        margin: 0 auto;                        /* align image at the center */
+    }
+
+    /* ---------------------- TEAM ----------------------- */
+    .team_container{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);            /* 3 columns in a row with equal space each */
+        gap: 1.5rem;
+    }
+
+    .team_member{
+        padding: 1.2rem;
+    }
+}
+
+/* ---------------------- Media Queries (Mobiles) ----------------------- */
+@media screen and (max-width: 600px) {
+    /* for any screen below 600px */
+    body{
+        background: var(--color-success);
+    }
+
+    /* ---------------------- ACHIEVEMENTS ----------------------- */
+    .about_achievements{
+        margin-top: 3rem;
+    }
+
+    .achievements_cards{
+        display: grid;
+        grid-template-columns: 1fr 1fr;                /* 2 columns in a row each */
+    }
+
+    /* ---------------------- TEAM ----------------------- */
+    .team_container{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);            /* 3 columns in a row with equal space each */
+        gap: 0.5rem;
+    }
+
+    .team_member{
+        padding: 0;
+    }
+
+    .team_member p{
+        margin-bottom: 1.5rem;
+    }
+
+    .team_member-socials{
+        height: fit-content;
+        margin-bottom: 1rem;
+    }
+
+    .team_member-socials a{
+        padding: 0.7rem;
+    }
+}

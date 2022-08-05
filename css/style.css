@@ -1,0 +1,573 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+}
+
+:root{
+    --color-primary: #33d6d6;
+    --color-seconday: rgb(222, 139, 153);
+    --color-success: #bb33d6;
+    --color-warning: #f32c11;
+    --color-warning1: #cf1717;
+    --color-warning2: #8f1a1a;
+    --color-white: #fcfcfc;
+    --color-light: #e0dcdc;
+    --color-black: #0d0c0c;
+    --color-bg: #8541fb;
+    --color-bg1: rgb(85, 3, 166);
+    --color-bg2: rgb(77, 3, 151);
+    --color-bg3: #33166a;
+
+
+    --transition: all 400ms ease;
+}
+
+body{
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.5;
+    color: var(--color-white);
+    background: var(--color-bg);
+}
+
+.container{
+    width: 75%;
+    margin: 0 auto;
+}
+
+section{
+    padding: 6rem 0;
+}
+
+section h2{
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+h1,h2,h3,h4,h5{
+    line-height: 1.2;
+}
+
+h1{
+    font-size: 2.5rem;
+}
+
+h2{
+    font-size: 2rem;
+}
+
+h3{
+    font-size: 1.5rem;
+}
+
+h4{
+    font-size: 1.3rem;
+}
+
+a{
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    color: var(--color-white);
+}
+
+img{
+    width: 100%;
+    display: block;
+    object-fit: cover;
+    opacity: 0.6;
+    height: 100%;
+}
+
+.btn{
+    display: inline-block;
+    background: var(--color-white);
+    color: var(--color-black);
+    padding: 1rem 2rem;
+    border: 1px solid transparent;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.btn:hover{
+    background: transparent;
+    color: var(--color-white);
+    border-color: var(--color-white);
+}
+
+.btn-primary{
+    background: var(--color-warning);
+    color: var(--color-white);
+}
+
+/* ---------------------- NAVBAR ----------------------- */
+nav{
+    background: transparent;
+    width: 100vw;               /* full width */           
+    height: 5rem;
+    position: fixed;           /* navbar will be present even if we scroll */
+    top: 0;                    /* always on top */
+    z-index: 11;
+}
+
+/* change navbar style on scrolling using javascript */
+.window-scroll{
+    background: var(--color-primary);
+    box-shadow: 0 0 0.5rem;
+}
+
+.nav_container{
+    height: 100%;
+    display: flex;            /* display the two container items in a row*/
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav button{
+    display: none;            /* buttons available only on mobiles/tablets */
+}
+
+.nav_menu{
+    display: flex;            /* display the menu items in a row */
+    align-items: center;
+    gap: 4rem;
+    list-style: none;         /* remove bullets */
+}
+
+.nav_menu a{
+    font-size: 1rem;        /* specify font size of the menu items */
+    transition: all 500ms ease;   /* hover color will fade out smoothly */
+}
+
+.nav_menu a:hover{
+    color: var(--color-black);
+}
+
+/* ---------------------- HEADER ----------------------- */
+header{
+    position: relative;
+    top: 3rem;
+    overflow: hidden;
+    height: 70vh;
+    margin-bottom: 5rem;
+}
+
+.header_container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;    /* display the two containers in a row in 50:50 space */
+    align-items: center;               /* align the items in the center of the container*/
+    gap: 5rem;                         /* gap between the left and right container items */
+    height: 100%;
+}
+
+.header_left p{
+    margin: 1rem 0 2.5rem;
+}
+
+.header_right{
+    margin-left: 2rem;
+}
+
+/* ---------------------- CATEGORIES ----------------------- */
+.categories{
+    background: var(--color-bg2);
+    height: 20rem;
+}
+
+.categories h1{
+    line-height: 1;
+    margin-bottom: 3rem;
+}
+
+.btn-secondary{
+    background: yellow;
+    color: var(--color-black);
+}
+
+.categories_container{
+    display: grid;
+    grid-template-columns: 40% 60%;          /* divide the columns in a 40:60 space */
+    gap: 5rem;                               /* gap between the two columns */
+}
+
+.categories_left p{
+    margin: 1rem 0 3rem;
+}
+
+.categories_left{
+    margin-right: 4rem;
+}
+
+.categories_right{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);   /* 3 columns in each row with equal fraction of space */
+    gap: 1.3rem;                             /* gap between the 3 columns */
+}
+
+.category{
+    background: var(--color-bg1);           /* background color of the columns */
+    padding: 2rem;
+    border-radius: 2rem;
+    transition: var(--transition);
+}
+
+.category:hover{
+    box-shadow: 0 0 1.2rem rgb(170, 107, 225);
+}
+
+.category_icon{
+    background: var(--color-bg);             /* icon background */
+    padding: 0.5rem;
+    border-radius: 00.9rem;
+}
+
+/* different color for the first row */
+.category:nth-child(1){                      /* first column*/
+    background: var(--color-bg1);
+}
+
+.category:nth-child(2){                      /* second column */
+    background: var(--color-bg);
+}
+
+.category:nth-child(3){                      /* third column */
+    background: var(--color-bg);
+}
+
+/* different color for each icon */
+.category:nth-child(2) .category_icon{         /* second icon */
+    background-color: var(--color-primary);
+}
+
+.category:nth-child(3) .category_icon{         /* third icon */
+    background-color: var(--color-success);
+}
+
+.category:nth-child(4) .category_icon{         /* fourth icon */
+    background-color: var(--color-primary);
+}
+
+.category:nth-child(5) .category_icon{         /* fifth icon */
+    background-color: var(--color-warning);
+}
+
+.category:nth-child(6) .category_icon{         /* sixth icon */
+    background-color: rgb(252, 252, 23);
+}
+
+.category h5{
+    margin: 1rem 0 1rem;
+}
+
+.category p{
+    font-size: 0.9rem;
+}
+
+/* ---------------------- COURSES ----------------------- */
+.courses{
+    background: transparent;
+    height: 70rem;
+}
+
+.courses h2{
+    line-height: 1;
+    margin-top: 7rem;
+    margin-bottom: 3rem;
+}
+
+.courses_container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);       /* display the 4 courses in 2 rows with 50:50 space each */
+    gap: 2rem;                                   /* gap between 2 columns in a row*/
+}
+
+.course{
+    background: transparent;
+    text-align: center;
+    border: 2.2px solid var(--color-bg3);
+    transition: all 500ms ease;                  /* hover color will fade out smoothly */
+}
+
+.course:hover{
+    background: transparent;
+    border-color: var(--color-primary);        /* border color changes to cyan on hover */
+}
+
+.course_image img{
+    height: 30vh;
+}
+
+.course_info{
+    padding: 2rem;
+}
+
+.course_info p{
+    margin: 1.2rem 0 2rem;
+    font-size: 0.9rem;
+}
+
+/* ---------------------- FAQS ----------------------- */
+.faqs{
+    background: var(--color-bg3);
+    box-shadow: 0 0 3rem;
+}
+
+.faqs_container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;            /* 2 column with 50:50 space each */
+    gap: 2rem;
+}
+
+.faq{
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1.3rem;
+    height: fit-content;
+    background: var(--color-bg);
+    cursor: pointer;                           /* hand pointer */
+}
+
+.faq h4{
+    font-size: 1rem;
+    line-height: 2.2;;
+}
+
+.faq_icon{
+    align-self: flex-start;                   /* assign the + icon at starting position */
+    font-size: 1.3rem;
+}
+
+.faq p{
+    margin: 0.7rem;
+    display: none;                            /* don't display the answers always */
+}
+
+.faq.open p{
+    display: block;                          /* display the answer of any 1 question */
+}
+
+/* ---------------------- FOOTER ----------------------- */
+footer{
+    background: var(--color-bg2);
+    padding-top: 3rem;
+    font-size: 0.9rem;
+}
+
+.footer_container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);                  /* display 4 columns of equal 1fr space each */
+    gap: 5rem;
+}
+
+.footer_container > div h4{
+    margin-bottom: 1.3rem;
+}
+
+.footer_1 p{
+    margin: 0 0 2rem;
+}
+
+footer ul li{
+    list-style: none;
+    margin-bottom: 0.5rem;
+}
+
+footer ul li a:hover{
+    text-decoration: underline;
+}
+
+.footer_socials{
+    display: flex;                     /* display all social icons in a single row */
+    gap: 1.1rem;
+    font-size: 1.3rem;
+    margin-top: 1.2rem;
+    list-style: none;
+}
+
+.footer_copyright{
+    text-align: center;
+    margin-top: 4rem;
+    padding: 1.3rem 0;
+    border-top: 1px solid var(--color-bg);
+}
+
+/* ---------------------- Media Queries (Tablets) ----------------------- */
+@media screen and (max-width: 1024px) {
+    /* for any screen below 1024px */
+    body{
+        background: #b362df;
+    }
+
+    .container{
+        width: 90%;
+    }
+
+    h1{
+        font-size: 2rem;
+    }
+
+    h2{
+        font-size: 1.5rem;
+    }
+
+    h3{
+        font-size: 1.2rem;
+    }
+
+    h4{
+        font-size: 1rem;
+    }
+
+    /* ---------------------- NAVBAR ----------------------- */
+    nav button{
+        display: inline-block;
+        background: transparent;
+        font-size: 1.7rem;
+        color: var(--color-white);
+        cursor: pointer;
+    }
+
+    nav button#close-menu-btn{
+        display: none;                /* don't display the X button on navbar */
+    }
+
+    .nav_menu{
+        position: fixed;
+        top: 5rem;
+        right: 5%;
+        height: fit-content;
+        width: 16rem;
+        flex-direction: column;       /* display the menu items in a column */
+        gap: 0;
+        /* don't display the column initially */ 
+        display: none;                /* we will use JS to display the nav menu column when clicked on = at navbar */
+    }
+
+    .nav_menu li{
+        width: 100%;
+        height: 5.6rem;
+    }
+
+    .nav_menu li a{
+        background: var(--color-bg);
+        box-shadow: -2rem 2rem 2rem rgb(191, 81, 228);
+        width: 100%;
+        height: 100%;
+        display: grid;                 /* display the items in the grid */
+        place-items: center;
+    }
+
+    .nav_menu li a:hover{
+        background: var(--color-bg2);  /* change list items background color on hover */
+        color: var(--color-white);
+    }
+
+    /* ---------------------- HEADER ----------------------- */
+    header{
+        height: 60vh;
+        margin-top: 1rem;
+        margin-bottom: 5rem;
+    }
+
+    .header_container{
+        gap: 0;
+        padding-bottom: 2rem;
+    }
+
+    /* ---------------------- CATEGORIES ----------------------- */
+    .categories{
+        height: fit-content;          /* fit columns inside the container */
+    }
+
+    .categories_container{
+        grid-template-columns: 1fr;   /* display the 2 container items column wise */
+        gap: 3rem;
+    }
+
+    .categories_left{
+        margin-right: 0;
+    }
+
+    /* ---------------------- COURSES ----------------------- */
+    .courses{
+        margin-top: -5rem;
+        height: fit-content;             /* fit columns inside the container */
+    }
+
+    .courses_container{
+        grid-template-columns: 1fr 1fr;  /* 50:50 space for 2 columns in a row */
+    }
+
+    /* ---------------------- FAQS ----------------------- */
+    .faqs_container{
+        grid-template-columns: 1fr;      /* only 1 item in a row */
+    }
+
+    .faq{
+        padding: 1.2rem;
+    }
+
+    /* ---------------------- FOOTER ----------------------- */
+    .footer_container{
+        grid-template-columns: 1fr 1fr;   /* 2 columns in a row with 50:50 space */
+    }
+}
+
+/* ---------------------- Media Queries (Mobiles) ----------------------- */
+@media screen and (max-width: 600px) {
+    /* for any screen below 600px */
+    body{
+        background: #b362df;
+    }
+
+    .container{
+        width: 94%;
+    }
+
+    /* ---------------------- NAVBAR ----------------------- */
+    .nav_menu{
+        right: 3%;
+    }
+
+    /* ---------------------- HEADER ----------------------- */
+    header{
+        height: 100vh;
+    }
+
+    .header_container{
+        grid-template-columns: 1fr;           /* the 2 items will be displayed in separate rows */
+        text-align: center;
+        margin-top: 0;
+    }
+
+    .header_left p{
+        margin-bottom: 1.3rem;
+    }
+
+    .header_right{
+        margin-top: -10rem;
+    }
+
+    /* ---------------------- CATEGORIES ----------------------- */
+    .categories_right{
+        grid-template-columns: 1fr 1fr;      /* 2 columns with 50:50 space each */
+        gap: 0.7rem;
+    }
+
+    .category{
+        padding: 1.3rem;
+        border-radius: 1.3rem;
+    }
+
+    /* ---------------------- COURSES ----------------------- */
+    .courses_container{
+        grid-template-columns: 1fr;          /* only 1 item in a row */
+    }
+
+    /* ---------------------- FOOTER ----------------------- */
+    .footer_container{
+        grid-template-columns: 1fr;         /* only 1 item in a row */
+    }
+}
